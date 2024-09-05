@@ -1,0 +1,111 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Version>0.0.0.3</Version>
+		<TargetFramework>net48</TargetFramework>
+		<Platforms>x64</Platforms>
+		<LangVersion>10.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<ModuleId>$(MSBuildProjectName)</ModuleId>
+		<ModuleName>$(MSBuildProjectName)</ModuleName>
+		<GameFolder>"$(BANNERLORD_GAME_DIR)"</GameFolder>
+		<BaseOutputPath></BaseOutputPath>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<PlatformTarget>x64</PlatformTarget>
+		<Configurations>Debug;ReleaseBuild</Configurations>
+		<RunAnalyzersDuringBuild>True</RunAnalyzersDuringBuild>
+		<RunAnalyzersDuringLiveAnalysis>True</RunAnalyzersDuringLiveAnalysis>
+		<ImplicitUsings>disable</ImplicitUsings>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseBuild|x64'">
+	  <Optimize>False</Optimize>
+	</PropertyGroup>
+	
+
+	<!--Other community Dependencies-->
+	<ItemGroup>
+	  <PackageReference Include="Bannerlord.ButterLib" Version="2.9.9" />
+	  <PackageReference Include="Bannerlord.MCM" Version="5.10.1" IncludeAssets="compile" />
+	  <PackageReference Include="Bannerlord.ReferenceAssemblies" Version="1.2.9.38256" />
+	  <PackageReference Include="Bannerlord.UIExtenderEx" Version="2.11.0" />
+	  <PackageReference Include="Lib.Harmony" Version="2.3.3" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="ExperienceTuner\Bin\Win64_Shipping_Client\ExperienceTuner.cs">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Compile>
+	  <Compile Update="Properties\Settings.Designer.cs">
+	    <DesignTimeSharedInput>True</DesignTimeSharedInput>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Settings.settings</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <None Update="ExperienceTunerBuild\SubModule.xml">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="ExperienceTuner\SubModule.xml">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Properties\Settings.settings">
+	    <Generator>SettingsSingleFileGenerator</Generator>
+	    <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+	  </None>
+	  <None Update="SubModule.xml">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Update="System">
+	    <Private>False</Private>
+	  </Reference>
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Update="System.Core">
+	    <Private>False</Private>
+	  </Reference>
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Update="System.Data">
+	    <Private>False</Private>
+	  </Reference>
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Update="System.Drawing">
+	    <Private>False</Private>
+	  </Reference>
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Update="System.IO.Compression.FileSystem">
+	    <Private>False</Private>
+	  </Reference>
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Update="System.Numerics">
+	    <Private>False</Private>
+	  </Reference>
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Update="System.Runtime.Serialization">
+	    <Private>False</Private>
+	  </Reference>
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Update="System.Xml">
+	    <Private>False</Private>
+	  </Reference>
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Update="System.Xml.Linq">
+	    <Private>False</Private>
+	  </Reference>
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Build\" />
+	</ItemGroup>
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+	  <Exec Command="Echo Output Directory: $(OutDir)&#xD;&#xA;Echo Module File Output: ExperienceTunerModule\&#xD;&#xA;Echo Game Directory: $(GameFolder)&#xD;&#xA;Echo Module Directory: $(GameFolder)\Modules\" />
+	</Target>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="xcopy $(OutDir)\ExperienceTuner.dll ExperienceTunerModule\bin\Win64_Shipping_Client\ /Y&#xD;&#xA;xcopy $(OutDir)\0Harmony.dll ExperienceTunerModule\bin\Win64_Shipping_Client\ /Y&#xD;&#xA;xcopy $(OutDir)\SubModule.xml ExperienceTunerModule\ /Y&#xD;&#xA;&#xD;&#xA;xcopy ExperienceTunerModule $(GameFolder)\Modules\ExperienceTuner\ /Y /E" />
+	</Target>
+</Project>

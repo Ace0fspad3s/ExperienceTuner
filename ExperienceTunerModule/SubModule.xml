@@ -1,0 +1,32 @@
+﻿<Module>
+	<Name value="Experience Tuner"/>
+	<Id value="ExperienceTuner"/>
+	<Version value="v0.0.0.2"	/>
+	<SingleplayerModule value="true"/>
+	<MultiplayerModule value="false"/>
+	<Url value=""/>
+	<DependedModules>
+		<DependedModule Id="Bannerlord.Harmony" DependentVersion="v2.3.3.0"/>
+		<DependedModule Id="Bannerlord.MBOptionScreen" DependentVersion="v5.10.1"/>
+	</DependedModules>
+	<DependedModuleMetadatas>
+		<DependedModuleMetadata id="Native" order="LoadAfterThis" version="v1.0.0.*" optional="true" />
+		<DependedModuleMetadata id="SandBoxCore" order="LoadAfterThis" version="v1.0.0.*" optional="true" />
+		<DependedModuleMetadata id="Sandbox" order="LoadAfterThis" version="v1.0.0.*" optional="true" />
+		<DependedModuleMetadata id="StoryMode" order="LoadAfterThis" version="v1.0.0.*" optional="true" />
+		<DependedModuleMetadata id="CustomBattle" order="LoadAfterThis" version="v1.0.0.*" optional="true" />
+	</DependedModuleMetadatas>
+	<SubModules>
+		<SubModule>
+			<Name value="ExperienceTuner"/>
+			<DLLName value="ExperienceTuner.dll"/>
+			<SubModuleClassType value="ExperienceTuner.ExperienceTuner"/>
+			<Tags>
+				<Tag key="DedicatedServerType" value="none"/>
+				<Tag key="IsNoRenderModeElement" value="false"/>
+			</Tags>
+		</SubModule>
+	</SubModules>
+	<Xmls>
+	</Xmls>
+</Module>

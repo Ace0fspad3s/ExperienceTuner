@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35004.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExperienceTuner", "ExperienceTuner.csproj", "{DEDA337F-C39A-4794-94BA-6A1AE760703E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Module", "_Module", "{95D3E649-81A3-4B42-A085-6D2B7A40201E}"
+	ProjectSection(SolutionItems) = preProject
+		SubModule.xml = SubModule.xml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug, Release|Any CPU = Debug, Release|Any CPU
+		Debug, Release|x64 = Debug, Release|x64
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		ReleaseBuild|Any CPU = ReleaseBuild|Any CPU
+		ReleaseBuild|x64 = ReleaseBuild|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEDA337F-C39A-4794-94BA-6A1AE760703E}.Debug, Release|Any CPU.ActiveCfg = Debug, Release|x64
+		{DEDA337F-C39A-4794-94BA-6A1AE760703E}.Debug, Release|Any CPU.Build.0 = Debug, Release|x64
+		{DEDA337F-C39A-4794-94BA-6A1AE760703E}.Debug, Release|x64.ActiveCfg = Debug, Release|x64
+		{DEDA337F-C39A-4794-94BA-6A1AE760703E}.Debug, Release|x64.Build.0 = Debug, Release|x64
+		{DEDA337F-C39A-4794-94BA-6A1AE760703E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEDA337F-C39A-4794-94BA-6A1AE760703E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEDA337F-C39A-4794-94BA-6A1AE760703E}.Debug|x64.ActiveCfg = Debug|x64
+		{DEDA337F-C39A-4794-94BA-6A1AE760703E}.Debug|x64.Build.0 = Debug|x64
+		{DEDA337F-C39A-4794-94BA-6A1AE760703E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEDA337F-C39A-4794-94BA-6A1AE760703E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEDA337F-C39A-4794-94BA-6A1AE760703E}.Release|x64.ActiveCfg = Debug|x64
+		{DEDA337F-C39A-4794-94BA-6A1AE760703E}.Release|x64.Build.0 = Debug|x64
+		{DEDA337F-C39A-4794-94BA-6A1AE760703E}.ReleaseBuild|Any CPU.ActiveCfg = ReleaseBuild|x64
+		{DEDA337F-C39A-4794-94BA-6A1AE760703E}.ReleaseBuild|Any CPU.Build.0 = ReleaseBuild|x64
+		{DEDA337F-C39A-4794-94BA-6A1AE760703E}.ReleaseBuild|x64.ActiveCfg = ReleaseBuild|x64
+		{DEDA337F-C39A-4794-94BA-6A1AE760703E}.ReleaseBuild|x64.Build.0 = ReleaseBuild|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7EBFF18E-8830-4A1F-AE0A-17852F5CE306}
+	EndGlobalSection
+EndGlobal
