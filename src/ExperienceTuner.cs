@@ -34,7 +34,7 @@ namespace ExperienceTuner
         {
             CampaignEvents.HourlyTickEvent.AddNonSerializedListener(this, Tick);
         }
-        private void Tick() { MessageHelper.DisplayMessage("Poo Poo Pee Pee", TextColor.Red); }
+        private void Tick() { MessageHelper.DisplayMessage("Test Message!", TextColor.Red); }
         public override void SyncData(IDataStore dataStore)
         {
             // only used if we need to save stuff...
